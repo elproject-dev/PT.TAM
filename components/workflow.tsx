@@ -155,7 +155,7 @@ export default function Workflow({ lang }: WorkflowProps) {
           <span className="text-xs font-bold text-accent-orange uppercase tracking-widest">
             {t.sectionTitle}
           </span>
-          <h2 className="text-3xl sm:text-4xl font-bold text-white font-heading mt-2">
+          <h2 className="text-[26px] sm:text-4xl font-bold text-white font-heading mt-2">
             {t.heading}
           </h2>
           <p className="text-zinc-200 mt-3 font-medium text-sm sm:text-base">
