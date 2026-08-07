@@ -88,22 +88,19 @@ export default function Kontak({ lang }: KontakProps) {
 
           {/* Left Column: Contact Cards */}
           <div className="lg:col-span-6 flex flex-col h-full">
-            <h3 className="text-2xl font-bold text-white font-heading mb-6 text-center">{t.infoTitle}</h3>
-            <div className="bg-[#1c100b] border border-[#2a170b] rounded-2xl p-8 sm:p-10 relative flex-1 flex flex-col gap-6">
+            <h3 className="text-2xl font-bold text-white font-heading mb-6 text-left pl-5 sm:pl-6">{t.infoTitle}</h3>
+            <div className="relative flex-1 flex flex-col gap-5 sm:gap-6">
 
               {/* Address */}
               <a
                 href="https://maps.app.goo.gl/V8VrBfyrZNKAeVCEA"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex gap-4 p-5 rounded-xl bg-[#2a170b] border border-black hover:border-accent-orange/30 hover:bg-zinc-800 transition-all group shadow-sm"
+                className="flex gap-4 sm:gap-5 p-5 sm:p-6 rounded-xl bg-[#2a170b] border border-black hover:border-accent-orange/30 hover:bg-zinc-800 transition-all group shadow-sm"
               >
-                <div className="p-3 rounded-lg bg-accent-orange/10 border border-accent-orange/20 text-accent-orange h-fit">
-                  <MapPin className="h-5 w-5" />
-                </div>
                 <div>
-                  <h4 className="text-sm font-bold text-white uppercase tracking-wider mb-1">{t.address}</h4>
-                  <p className="text-zinc-200 font-medium text-sm leading-relaxed group-hover:text-accent-orange transition-colors">
+                  <h4 className="text-sm sm:text-base font-bold text-accent-orange sm:text-white uppercase tracking-wider mb-1 sm:mb-2">{t.address}</h4>
+                  <p className="text-zinc-200 font-medium text-sm sm:text-base leading-relaxed group-hover:text-accent-orange transition-colors">
                     Jl. Wahid Hasyim No.5, Condongcatur, Kec. Depok, Kab. Sleman, Daerah Istimewa Yogyakarta 55281
                   </p>
                 </div>
@@ -112,14 +109,11 @@ export default function Kontak({ lang }: KontakProps) {
               {/* Phone */}
               <a
                 href="tel:+6281326094118"
-                className="flex gap-4 p-5 rounded-xl bg-[#2a170b] border border-black hover:border-accent-orange/30 hover:bg-zinc-800 transition-all group shadow-sm"
+                className="flex gap-4 sm:gap-5 p-5 sm:p-6 rounded-xl bg-[#2a170b] border border-black hover:border-accent-orange/30 hover:bg-zinc-800 transition-all group shadow-sm"
               >
-                <div className="p-3 rounded-lg bg-accent-orange/10 border border-accent-orange/20 text-accent-orange">
-                  <Phone className="h-5 w-5" />
-                </div>
                 <div>
-                  <h4 className="text-sm font-bold text-white uppercase tracking-wider mb-1">{t.phone}</h4>
-                  <p className="text-zinc-200 font-medium text-sm group-hover:text-accent-orange transition-colors">
+                  <h4 className="text-sm sm:text-base font-bold text-accent-orange sm:text-white uppercase tracking-wider mb-1 sm:mb-2">{t.phone}</h4>
+                  <p className="text-zinc-200 font-medium text-sm sm:text-base group-hover:text-accent-orange transition-colors">
                     +62 813-2609-4118
                   </p>
                 </div>
@@ -128,14 +122,11 @@ export default function Kontak({ lang }: KontakProps) {
               {/* Email */}
               <a
                 href="mailto:tembusabadimakmur@gmail.com"
-                className="flex gap-4 p-5 rounded-xl bg-[#2a170b] border border-black hover:border-accent-orange/30 hover:bg-zinc-800 transition-all group shadow-sm"
+                className="flex gap-4 sm:gap-5 p-5 sm:p-6 rounded-xl bg-[#2a170b] border border-black hover:border-accent-orange/30 hover:bg-zinc-800 transition-all group shadow-sm"
               >
-                <div className="p-3 rounded-lg bg-accent-orange/10 border border-accent-orange/20 text-accent-orange">
-                  <Mail className="h-5 w-5" />
-                </div>
                 <div>
-                  <h4 className="text-sm font-bold text-white uppercase tracking-wider mb-1">{t.email}</h4>
-                  <p className="text-zinc-200 font-medium text-sm group-hover:text-accent-orange transition-colors">
+                  <h4 className="text-sm sm:text-base font-bold text-accent-orange sm:text-white uppercase tracking-wider mb-1 sm:mb-2">{t.email}</h4>
+                  <p className="text-zinc-200 font-medium text-sm sm:text-base group-hover:text-accent-orange transition-colors">
                     tembusabadimakmur@gmail.com
                   </p>
                 </div>
@@ -146,14 +137,11 @@ export default function Kontak({ lang }: KontakProps) {
                 href="https://www.tembusabadimakmur.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex gap-4 p-5 rounded-xl bg-[#2a170b] border border-black hover:border-accent-orange/30 hover:bg-zinc-800 transition-all group shadow-sm"
+                className="flex gap-4 sm:gap-5 p-5 sm:p-6 rounded-xl bg-[#2a170b] border border-black hover:border-accent-orange/30 hover:bg-zinc-800 transition-all group shadow-sm"
               >
-                <div className="p-3 rounded-lg bg-accent-orange/10 border border-accent-orange/20 text-accent-orange">
-                  <Globe className="h-5 w-5" />
-                </div>
                 <div>
-                  <h4 className="text-sm font-bold text-white uppercase tracking-wider mb-1">{t.website}</h4>
-                  <p className="text-zinc-200 font-medium text-sm group-hover:text-accent-orange transition-colors">
+                  <h4 className="text-sm sm:text-base font-bold text-accent-orange sm:text-white uppercase tracking-wider mb-1 sm:mb-2">{t.website}</h4>
+                  <p className="text-zinc-200 font-medium text-sm sm:text-base group-hover:text-accent-orange transition-colors">
                     www.tembusabadimakmur.com
                   </p>
                 </div>

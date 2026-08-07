@@ -83,12 +83,12 @@ export default function Prakata({ lang }: PrakataProps) {
                 <div className="w-20 h-1 bg-accent-orange mt-4 rounded-full" />
               </div>
 
-              <div className="flex flex-col gap-4 text-white font-semibold leading-relaxed text-sm sm:text-base">
-                <p className="text-accent-orange font-semibold italic">
+              <div className="flex flex-col gap-2 sm:gap-4 text-white font-semibold leading-normal sm:leading-relaxed text-[11px] sm:text-base text-left">
+                <p className="text-accent-orange font-semibold italic text-[11px] sm:text-base">
                   Bismillahirrahmanirrahim...
                 </p>
 
-                <p className="text-accent-orange font-semibold">
+                <p className="text-accent-orange font-semibold text-[11px] sm:text-base">
                   {lang === "id" ? "Assalamualaikum wr. wb." : "Assalamu'alaikum wr. wb."}
                 </p>
 
@@ -107,21 +107,21 @@ export default function Prakata({ lang }: PrakataProps) {
                 })}
               </div>
 
-              <div className="flex flex-col sm:flex-row sm:justify-between sm:items-end gap-6">
+              <div className="flex flex-row justify-between items-end gap-2 sm:gap-6 mt-4 sm:mt-0">
                 <div className="flex flex-col gap-1">
-                  <span className="text-accent-orange font-semibold font-heading">
+                  <span className="text-accent-orange font-semibold font-heading text-[11px] sm:text-base">
                     Wassalamualaikum wr. wb.
                   </span>
-                  <span className="text-zinc-500 text-xs">
+                  <span className="text-zinc-500 text-[9px] sm:text-xs">
                     Yogyakarta, Indonesia
                   </span>
                 </div>
 
                 <div className="flex flex-col gap-1 text-right">
-                  <span className="text-white font-semibold font-heading text-sm">
+                  <span className="text-white font-semibold font-heading text-[11px] sm:text-sm">
                     {name}
                   </span>
-                  <span className="text-accent-orange text-xs font-medium uppercase tracking-wider">
+                  <span className="text-accent-orange text-[9px] sm:text-xs font-medium uppercase tracking-wider">
                     {role}
                   </span>
                 </div>

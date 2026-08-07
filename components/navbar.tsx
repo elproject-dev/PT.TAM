@@ -39,20 +39,20 @@ export default function Navbar({ lang, setLang, activeSection }: NavbarProps) {
 
   return (
     <motion.nav
-      className="fixed top-4 inset-x-0 mx-auto z-50 w-[95%] max-w-7xl pointer-events-none"
+      className="fixed top-0 sm:top-4 inset-x-0 mx-auto z-50 w-full sm:w-[95%] max-w-7xl pointer-events-none"
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6, type: "spring", stiffness: 120 }}
     >
       <motion.div
-        className="w-full flex relative justify-between items-center px-4 sm:px-6 py-3 rounded-2xl pointer-events-auto"
+        className="w-full flex relative justify-between items-center px-4 sm:px-6 py-3 border-b sm:border-b-0 border-white/10 sm:rounded-2xl pointer-events-auto"
         animate={{
-          maxWidth: scrolled ? "100%" : "90%",
-          backgroundColor: scrolled ? "rgba(30, 18, 12, 0.85)" : "rgba(30, 18, 12, 0.45)",
+          maxWidth: typeof window !== "undefined" && window.innerWidth < 640 ? "100%" : (scrolled ? "100%" : "90%"),
+          backgroundColor: scrolled ? "rgba(30, 18, 12, 0.85)" : (typeof window !== "undefined" && window.innerWidth < 640 ? "rgba(30, 18, 12, 0.85)" : "rgba(30, 18, 12, 0.45)"),
           backdropFilter: "blur(16px)",
           borderColor: "rgba(255, 255, 255, 0.08)",
           borderWidth: "1px",
-          boxShadow: scrolled
+          boxShadow: scrolled || (typeof window !== "undefined" && window.innerWidth < 640)
             ? "0 20px 40px -15px rgba(0, 0, 0, 0.7), inset 0 1px 0 0 rgba(255, 255, 255, 0.05)"
             : "0 10px 30px -10px rgba(0, 0, 0, 0.5)",
         }}
@@ -66,7 +66,7 @@ export default function Navbar({ lang, setLang, activeSection }: NavbarProps) {
         }}
       >
         {/* Left Side: Brand Logo */}
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2 sm:gap-3">
           <Image
             src="/logo.png"
             alt="PT. TAM Logo"
@@ -75,7 +75,7 @@ export default function Navbar({ lang, setLang, activeSection }: NavbarProps) {
             className="w-8 h-auto object-contain hover:scale-105 transition-transform"
             priority
           />
-          <span className="text-[10px] sm:text-xs md:text-sm font-bold text-white font-poppins tracking-wider uppercase whitespace-nowrap">
+          <span className="text-[9px] min-[360px]:text-[10px] sm:text-xs md:text-sm font-bold text-white font-poppins tracking-wider uppercase whitespace-nowrap">
             PT. TEMBUS ABADI MAKMUR
           </span>
         </div>
@@ -184,8 +184,8 @@ export default function Navbar({ lang, setLang, activeSection }: NavbarProps) {
                   key={item.id}
                   href={`#${item.id}`}
                   onClick={() => setIsOpen(false)}
-                  className={`block px-4 py-2.5 rounded-xl text-sm font-semibold transition-all ${activeSection === item.id
-                    ? "bg-accent-orange/15 text-accent-orange border-l-2 border-accent-orange font-bold"
+                  className={`block px-4 py-3 rounded-xl text-base font-semibold transition-all text-center ${activeSection === item.id
+                    ? "bg-accent-orange/10 text-accent-orange font-bold"
                     : "text-zinc-300 hover:bg-zinc-900/60 hover:text-white"
                     }`}
                 >
@@ -194,11 +194,11 @@ export default function Navbar({ lang, setLang, activeSection }: NavbarProps) {
               ))}
 
               {/* Call-to-action button inside mobile menu */}
-              <div className="pt-4 border-t border-white/5">
+              <div className="pt-4 border-t border-white/5 mt-2">
                 <a
                   href="#kontak"
                   onClick={() => setIsOpen(false)}
-                  className="flex items-center justify-center w-full py-3 bg-white text-black font-bold rounded-xl text-sm transition-all active:scale-95"
+                  className="flex items-center justify-center w-full py-3.5 bg-accent-orange text-black font-bold rounded-xl text-base transition-all active:scale-95 shadow-lg shadow-accent-orange/20"
                 >
                   {lang === "id" ? "Hubungi Kami" : "Contact Us"}
                 </a>

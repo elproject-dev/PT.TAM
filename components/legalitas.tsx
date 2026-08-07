@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { FileText, Award, Landmark, ShieldCheck, Calendar, Lock, Image as ImageIcon } from "lucide-react";
+import { FileText, CreditCard, Landmark, ShieldCheck, Calendar, Lock, Image as ImageIcon } from "lucide-react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -91,7 +91,7 @@ export default function Legalitas({ lang }: LegalitasProps) {
     { type: "akta" as DocType, title: t.docs.akta.title, icon: FileText },
     { type: "sk" as DocType, title: t.docs.sk.title, icon: ShieldCheck },
     { type: "cover" as DocType, title: t.docs.cover.title, icon: Landmark },
-    { type: "npwp" as DocType, title: t.docs.npwp.title, icon: Award },
+    { type: "npwp" as DocType, title: t.docs.npwp.title, icon: CreditCard },
   ];
 
   return (

@@ -44,7 +44,7 @@ export default function Hero({ lang }: HeroProps) {
   }, [sentence]);
 
   return (
-    <div id="home" className="relative min-h-screen flex flex-col justify-center items-center overflow-hidden bg-background bg-grid-lines pt-20">
+    <div id="home" className="relative min-h-screen flex flex-col justify-center items-center overflow-hidden bg-background bg-grid-lines pt-12 sm:pt-20">
       {/* Glow Effects */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] sm:w-[600px] h-[350px] sm:h-[600px] rounded-full bg-accent-orange/10 blur-[80px] sm:blur-[120px] pointer-events-none" />
       <div className="absolute bottom-10 left-10 w-[300px] h-[300px] rounded-full bg-blue-500/5 blur-[100px] pointer-events-none" />
@@ -58,7 +58,7 @@ export default function Hero({ lang }: HeroProps) {
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6, type: "spring", stiffness: 100 }}
-          className="mb-8 relative"
+          className="mb-4 sm:mb-8 relative"
         >
           {/* Breathing Scale Animation Wrapper */}
           <motion.div
@@ -87,13 +87,13 @@ export default function Hero({ lang }: HeroProps) {
 
         {/* Heading */}
         <h1
-          className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight text-white font-poppins leading-[1.1] whitespace-nowrap animate-hero-title"
+          className="text-[6.5vw] min-[500px]:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight text-white font-poppins leading-[1.2] whitespace-nowrap text-center px-2 animate-hero-title"
         >
           PT. TEMBUS ABADI MAKMUR
         </h1>
 
         {/* Subtitle with Realistic Typing Effect */}
-        <p className="mt-6 text-xs sm:text-sm md:text-base lg:text-lg text-accent-orange max-w-xs sm:max-w-md md:max-w-2xl lg:max-w-none lg:whitespace-nowrap leading-relaxed font-bold flex items-center justify-center">
+        <p className="mt-6 text-[11px] sm:text-xs md:text-sm lg:text-base text-accent-orange max-w-xs sm:max-w-md md:max-w-2xl lg:max-w-none lg:whitespace-nowrap leading-relaxed font-bold flex flex-wrap items-center justify-center text-center">
           <span>{typedText}</span>
           {!isDone && (
             <motion.span

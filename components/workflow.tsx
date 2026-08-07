@@ -165,11 +165,11 @@ export default function Workflow({ lang }: WorkflowProps) {
         </div>
 
         {/* Tab Buttons */}
-        <div className="flex justify-center mb-12">
-          <div className="flex glass p-1.5 rounded-xl w-full max-w-md">
+        <div className="flex justify-center mb-12 px-4">
+          <div className="flex glass p-1 rounded-xl w-full max-w-sm">
             <button
               onClick={() => setActiveTab("design")}
-              className={`flex-1 text-center py-3 text-sm font-semibold rounded-lg transition-all ${
+              className={`flex-1 text-center py-2.5 text-xs font-semibold rounded-lg transition-all ${
                 activeTab === "design"
                   ? "bg-accent-orange text-white shadow-md"
                   : "text-zinc-400 hover:text-white"
@@ -179,7 +179,7 @@ export default function Workflow({ lang }: WorkflowProps) {
             </button>
             <button
               onClick={() => setActiveTab("production")}
-              className={`flex-1 text-center py-3 text-sm font-semibold rounded-lg transition-all ${
+              className={`flex-1 text-center py-2.5 text-xs font-semibold rounded-lg transition-all ${
                 activeTab === "production"
                   ? "bg-accent-orange text-white shadow-md"
                   : "text-zinc-400 hover:text-white"
