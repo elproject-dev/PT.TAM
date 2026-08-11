@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import "./globals.css";
 import PwaInstallPrompt from "@/components/PwaInstallPrompt";
-import { Analytics } from "@vercel/analytics/next";
+import { Analytics } from '@vercel/analytics/next';
 
 import { Viewport } from "next";
 
@@ -39,6 +39,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           className="object-cover fixed inset-0 -z-50 pointer-events-none opacity-[0.06]"
         />
         {children}
+        <Analytics />
       </body>
     </html>
   );
