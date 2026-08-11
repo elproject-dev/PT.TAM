@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import "./globals.css";
 import PwaInstallPrompt from "@/components/PwaInstallPrompt";
+import { Analytics } from "@vercel/analytics/next";
 
 import { Viewport } from "next";
 
