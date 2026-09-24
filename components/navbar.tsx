@@ -176,7 +176,7 @@ export default function Navbar({ lang, setLang, activeSection }: NavbarProps) {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -15, scale: 0.95 }}
             transition={{ duration: 0.25, ease: "easeInOut" }}
-            className="lg:hidden glass border-white/2 rounded-full mt-2 overflow-hidden pointer-events-auto shadow-2xl"
+            className="lg:hidden bg-[#1e120c]  rounded-3xl mt-2 overflow-hidden pointer-events-auto shadow-2xl"
           >
             <div className="px-4 py-6 space-y-2 flex flex-col">
               {navItems.map((item) => (
