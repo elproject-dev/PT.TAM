@@ -58,7 +58,7 @@ export function WhatsAppButton() {
   };
 
   return (
-    <div ref={containerRef} className="fixed bottom-5 right-5 sm:bottom-6 sm:right-6 z-50 flex flex-col items-end font-sans">
+    <div ref={containerRef} className="fixed bottom-20 right-5 sm:bottom-6 sm:right-6 z-50 flex flex-col items-end font-sans">
       {/* Floating Chat Box Window - Slightly Rounded Corners (rounded-xl / rounded-lg) */}
       {isOpen && (
         <div className="mb-4 w-[calc(100vw-2.5rem)] sm:w-[380px] max-h-[560px] bg-[#0f171c] border border-white/15 rounded-xl shadow-2xl overflow-hidden flex flex-col transition-all duration-300 animate-in fade-in slide-in-from-bottom-5">

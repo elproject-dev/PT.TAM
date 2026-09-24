@@ -80,6 +80,7 @@ export default function Hero({ lang }: HeroProps) {
               width={1056}
               height={784}
               className="w-[120px] sm:w-[150px] md:w-[180px] h-auto object-contain relative z-10 hover:scale-105 transition-transform duration-300"
+              sizes="(max-width: 640px) 120px, (max-width: 768px) 150px, 180px"
               priority
             />
           </motion.div>

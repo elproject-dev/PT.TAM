@@ -18,19 +18,25 @@ export default function PwaInstallPrompt({ lang }: { lang: "id" | "en" }) {
       });
     }
 
+    let promptTimer: NodeJS.Timeout;
+
     const handleBeforeInstallPrompt = (e: any) => {
       // Prevent the mini-infobar from appearing on mobile
       e.preventDefault();
       // Stash the event so it can be triggered later.
       setDeferredPrompt(e);
-      // Show the install UI
-      setShowPrompt(true);
+      
+      // Show the install UI after 30 seconds delay
+      promptTimer = setTimeout(() => {
+        setShowPrompt(true);
+      }, 30000);
     };
 
     window.addEventListener("beforeinstallprompt", handleBeforeInstallPrompt);
 
     return () => {
       window.removeEventListener("beforeinstallprompt", handleBeforeInstallPrompt);
+      if (promptTimer) clearTimeout(promptTimer);
     };
   }, []);
 
