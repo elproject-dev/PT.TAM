@@ -118,12 +118,12 @@ export default function Portfolio({ lang }: PortfolioProps) {
     },
     {
       id: 9,
-      title: lang === "id" ? "Instalasi Jaringan & Server" : "Network & Server Installation",
+      title: lang === "id" ? "Instalasi Jaringan & CCTV" : "Network & CCTV Installation",
       location: "Surabaya",
       category: "it",
       icon: Monitor,
-      bgImage: "/server_bg2.png",
-      desc: lang === "id" ? "Konfigurasi dan pemasangan infrastruktur komputer serta keamanan jaringan server korporat." : "Server infrastructure configuration and corporate fiber optic network installation.",
+      bgImage: "/cctv_setup_indo.jpg",
+      desc: lang === "id" ? "Konfigurasi dan pemasangan CCTV Serta Jaringan server korporat." : "Server infrastructure configuration and corporate fiber optic network installation.",
     },
   ];
 
@@ -177,7 +177,7 @@ export default function Portfolio({ lang }: PortfolioProps) {
                       src={bgImage}
                       alt={project.title}
                       fill
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                       className="object-cover group-hover:scale-105 transition-transform duration-700 pointer-events-none"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent pointer-events-none" />
@@ -207,19 +207,6 @@ export default function Portfolio({ lang }: PortfolioProps) {
             })}
           </AnimatePresence>
         </div>
-
-        {/* Full Width Banner */}
-        <div className="mt-16 w-full rounded-2xl overflow-hidden relative h-[150px] sm:h-[250px] md:h-[300px] border border-white/10 shadow-2xl group">
-          <Image
-            src="/banner1.png"
-            alt="Portfolio Banner"
-            fill
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-            className="object-cover group-hover:scale-105 transition-transform duration-1000"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent group-hover:opacity-0 transition-opacity duration-700 pointer-events-none" />
-        </div>
-
       </div>
     </section>
   );

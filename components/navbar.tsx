@@ -45,7 +45,7 @@ export default function Navbar({ lang, setLang, activeSection }: NavbarProps) {
       transition={{ duration: 0.6, type: "spring", stiffness: 120 }}
     >
       <motion.div
-        className="w-full flex relative justify-between items-center px-4 sm:px-6 py-3 border-b sm:border-b-0 border-white/10 sm:rounded-2xl pointer-events-auto"
+        className="w-full flex relative justify-between items-center px-4 sm:px-6 py-3 border-b sm:border-b-0 border-white/2 sm:rounded-full pointer-events-auto"
         animate={{
           maxWidth: typeof window !== "undefined" && window.innerWidth < 640 ? "100%" : (scrolled ? "100%" : "90%"),
           backgroundColor: scrolled ? "rgba(30, 18, 12, 0.85)" : (typeof window !== "undefined" && window.innerWidth < 640 ? "rgba(30, 18, 12, 0.85)" : "rgba(30, 18, 12, 0.45)"),
@@ -81,21 +81,21 @@ export default function Navbar({ lang, setLang, activeSection }: NavbarProps) {
         </div>
 
         {/* Center: Desktop Menu Items with Sliding Pill Indicator */}
-        <div className="hidden lg:flex items-center gap-1 glass p-1 rounded-xl backdrop-blur-sm">
+        <div className="hidden lg:flex items-center gap-1 glass p-1 rounded-full backdrop-blur-sm">
           {navItems.map((item) => {
             const isActive = activeSection === item.id;
             return (
               <a
                 key={item.id}
                 href={`#${item.id}`}
-                className={`text-xs font-semibold leading-[110%] px-4 py-2 rounded-lg transition-colors duration-300 relative select-none ${isActive ? "text-white" : "text-zinc-400 hover:text-white"
+                className={`text-xs font-semibold leading-[110%] px-4 py-2 rounded-full transition-colors duration-300 relative select-none ${isActive ? "text-white" : "text-zinc-400 hover:text-white"
                   }`}
               >
                 {/* Sliding Background Pill */}
                 {isActive && (
                   <motion.span
                     layoutId="activeNavTab"
-                    className="absolute inset-0 bg-zinc-800 rounded-lg shadow-[inset_0_1px_0_0_rgba(255,255,255,0.06)] z-0"
+                    className="absolute inset-0 bg-zinc-800 rounded-full shadow-[inset_0_1px_0_0_rgba(255,255,255,0.06)] z-0"
                     transition={{ type: "spring", stiffness: 380, damping: 30 }}
                   />
                 )}
@@ -108,7 +108,7 @@ export default function Navbar({ lang, setLang, activeSection }: NavbarProps) {
         {/* Right Side: Lang Switcher & Action Button */}
         <div className="hidden lg:flex items-center gap-4">
           {/* Language Switcher */}
-          <div className="flex items-center glass rounded-lg p-0.5 relative">
+          <div className="flex items-center glass rounded-full p-0.5 relative">
             <button
               onClick={() => setLang("id")}
               className={`text-[10px] font-bold px-2.5 py-1 rounded-md transition-colors relative z-10 ${lang === "id" ? "text-white" : "text-zinc-500 hover:text-zinc-300"
@@ -142,7 +142,7 @@ export default function Navbar({ lang, setLang, activeSection }: NavbarProps) {
           {/* Call-to-action button (LaunchPad style) */}
           <a
             href="#kontak"
-            className="text-xs px-4 py-2 bg-white text-black font-bold rounded-lg border border-white/20 transition-all hover:bg-zinc-200 shadow-sm active:scale-95 hover:scale-[1.02]"
+            className="text-xs px-4 py-2 bg-white text-black font-bold rounded-full border border-white/20 transition-all hover:bg-zinc-200 shadow-sm active:scale-95 hover:scale-[1.02]"
           >
             {lang === "id" ? "Hubungi Kami" : "Contact Us"}
           </a>
@@ -153,7 +153,7 @@ export default function Navbar({ lang, setLang, activeSection }: NavbarProps) {
           {/* Mobile Language toggle button */}
           <button
             onClick={() => setLang(lang === "id" ? "en" : "id")}
-            className="flex items-center gap-1 text-[10px] font-bold text-zinc-400 glass px-2.5 py-1.5 rounded-lg hover:text-white"
+            className="flex items-center gap-1 text-[10px] font-bold text-zinc-400 glass px-2.5 py-1.5 rounded-full hover:text-white"
           >
             <Globe className="h-3 w-3 text-accent-orange" />
             <span>{lang.toUpperCase()}</span>
@@ -161,7 +161,7 @@ export default function Navbar({ lang, setLang, activeSection }: NavbarProps) {
 
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="p-1.5 rounded-lg text-zinc-400 hover:text-white glass hover:bg-[#1e120c]"
+            className="p-1.5 rounded-full text-zinc-400 hover:text-white glass hover:bg-[#1e120c]"
           >
             {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </button>
@@ -176,7 +176,7 @@ export default function Navbar({ lang, setLang, activeSection }: NavbarProps) {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -15, scale: 0.95 }}
             transition={{ duration: 0.25, ease: "easeInOut" }}
-            className="lg:hidden glass border-white/10 rounded-2xl mt-2 overflow-hidden pointer-events-auto shadow-2xl"
+            className="lg:hidden glass border-white/2 rounded-full mt-2 overflow-hidden pointer-events-auto shadow-2xl"
           >
             <div className="px-4 py-6 space-y-2 flex flex-col">
               {navItems.map((item) => (
@@ -184,7 +184,7 @@ export default function Navbar({ lang, setLang, activeSection }: NavbarProps) {
                   key={item.id}
                   href={`#${item.id}`}
                   onClick={() => setIsOpen(false)}
-                  className={`block px-4 py-3 rounded-xl text-base font-semibold transition-all text-center ${activeSection === item.id
+                  className={`block px-4 py-3 rounded-full text-base font-semibold transition-all text-center ${activeSection === item.id
                     ? "bg-accent-orange/10 text-accent-orange font-bold"
                     : "text-zinc-300 hover:bg-zinc-900/60 hover:text-white"
                     }`}
@@ -198,7 +198,7 @@ export default function Navbar({ lang, setLang, activeSection }: NavbarProps) {
                 <a
                   href="#kontak"
                   onClick={() => setIsOpen(false)}
-                  className="flex items-center justify-center w-full py-3.5 bg-accent-orange text-black font-bold rounded-xl text-base transition-all active:scale-95 shadow-lg shadow-accent-orange/20"
+                  className="flex items-center justify-center w-full py-3.5 bg-accent-orange text-black font-bold rounded-full text-base transition-all active:scale-95 shadow-lg shadow-accent-orange/20"
                 >
                   {lang === "id" ? "Hubungi Kami" : "Contact Us"}
                 </a>

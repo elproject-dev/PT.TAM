@@ -149,7 +149,7 @@ export default function Workflow({ lang }: WorkflowProps) {
       <div className="absolute bottom-10 right-10 w-[450px] h-[450px] rounded-full bg-accent-orange/5 blur-[120px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        
+
         {/* Header */}
         <div className="text-center max-w-5xl mx-auto mb-16">
           <span className="text-xs font-bold text-accent-orange uppercase tracking-widest">
@@ -166,24 +166,22 @@ export default function Workflow({ lang }: WorkflowProps) {
 
         {/* Tab Buttons */}
         <div className="flex justify-center mb-12 px-4">
-          <div className="flex glass p-1 rounded-xl w-full max-w-sm">
+          <div className="flex glass p-1 rounded-full w-full max-w-sm">
             <button
               onClick={() => setActiveTab("design")}
-              className={`flex-1 text-center py-2.5 text-xs font-semibold rounded-lg transition-all ${
-                activeTab === "design"
-                  ? "bg-accent-orange text-white shadow-md"
-                  : "text-zinc-400 hover:text-white"
-              }`}
+              className={`flex-1 text-center py-2.5 text-xs font-semibold rounded-full transition-all ${activeTab === "design"
+                ? "bg-accent-orange text-white shadow-md"
+                : "text-zinc-400 hover:text-white"
+                }`}
             >
               {t.designTab}
             </button>
             <button
               onClick={() => setActiveTab("production")}
-              className={`flex-1 text-center py-2.5 text-xs font-semibold rounded-lg transition-all ${
-                activeTab === "production"
-                  ? "bg-accent-orange text-white shadow-md"
-                  : "text-zinc-400 hover:text-white"
-              }`}
+              className={`flex-1 text-center py-2.5 text-xs font-semibold rounded-full transition-all ${activeTab === "production"
+                ? "bg-accent-orange text-white shadow-md"
+                : "text-zinc-400 hover:text-white"
+                }`}
             >
               {t.productionTab}
             </button>
@@ -192,7 +190,7 @@ export default function Workflow({ lang }: WorkflowProps) {
 
         {/* Steps Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 relative">
-          
+
           <AnimatePresence>
             {(() => {
               const designImages = [
@@ -203,7 +201,7 @@ export default function Workflow({ lang }: WorkflowProps) {
                 "/design5_v2.png",
                 "/mission_bg_v2.png"
               ];
-              
+
               const productionImages = [
                 "/workflow_bg_v2.png",
                 "/mission_bg_v3.png",
@@ -212,9 +210,9 @@ export default function Workflow({ lang }: WorkflowProps) {
                 "/interior_bg_v2.png",
                 "/design2_v2.png"
               ];
-              
+
               const stepImages = activeTab === "design" ? designImages : productionImages;
-              
+
               return steps.map((step, idx) => {
                 const IconComp = step.icon;
                 const bgImage = stepImages[idx];
@@ -260,7 +258,7 @@ export default function Workflow({ lang }: WorkflowProps) {
                         {step.desc}
                       </p>
                     </div>
-                    
+
                     {/* Decorative indicator lines */}
                     {idx < 5 && (
                       <div className="hidden lg:block absolute -right-4 top-1/2 -translate-y-1/2 z-20 pointer-events-none text-zinc-300 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
@@ -274,7 +272,7 @@ export default function Workflow({ lang }: WorkflowProps) {
               });
             })()}
           </AnimatePresence>
-          
+
         </div>
 
       </div>

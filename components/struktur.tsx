@@ -17,8 +17,7 @@ export default function Struktur({ lang }: StrukturProps) {
       levels: {
         exec: "Direksi & Komisaris",
         management: "Manajemen & Administrasi",
-        field: "Tim Teknis & Pelaksana",
-        dev: "Pengembang Aplikasi",
+        tech: "Tim Teknis & IT",
       },
     },
     en: {
@@ -28,8 +27,7 @@ export default function Struktur({ lang }: StrukturProps) {
       levels: {
         exec: "Directors & Commissioner",
         management: "Management & Administration",
-        field: "Technical & Field Team",
-        dev: "Application Developers",
+        tech: "Technical & IT Team",
       },
     },
   };
@@ -38,13 +36,13 @@ export default function Struktur({ lang }: StrukturProps) {
 
   const execs = [
     {
-      name: "Zainal Muzaidin",
+      name: "",
       role: lang === "id" ? "Komisaris" : "Commissioner",
       image: "/businessman.png",
       color: "from-yellow-400 to-amber-500",
     },
     {
-      name: "Mahendra Harimawan",
+      name: "",
       role: lang === "id" ? "Direktur Utama" : "President Director",
       image: "/man2.png",
       color: "from-amber-400 to-yellow-500",
@@ -53,40 +51,42 @@ export default function Struktur({ lang }: StrukturProps) {
 
   const managers = [
     {
-      name: "Bayu Rahmawan",
+      name: "",
       role: lang === "id" ? "Project Manager" : "Project Manager",
       image: "/man4.png",
     },
     {
-      name: "Rizal A Shaleh",
+      name: "",
       role: lang === "id" ? "Marketing Manager" : "Marketing Manager",
       image: "/man3.png",
     },
     {
-      name: "Andre Bintang",
+      name: "",
       role: lang === "id" ? "Admin" : "Admin",
       image: "/man.png",
     },
     {
-      name: "Aktriani",
+      name: "",
       role: lang === "id" ? "Keuangan" : "Finance",
       image: "/woman.png",
     },
   ];
 
-  const field = [
-    {
-      name: "Andro Ramadhan",
-      role: lang === "id" ? "Pelaksana / Designer / Arsitek / Mandor" : "Field Supervisor / Designer / Architect / Foreman",
-      image: "/user2.png",
-    },
-  ];
-
-  const devs = [
+  const techs = [
     {
       name: "EL Project",
       role: lang === "id" ? "Developer & Jaringan Komputer" : "Developer",
       image: "/boy.png",
+    },
+    {
+      name: "Tim Teknis",
+      role: lang === "id" ? "Pelaksana / Designer / Arsitek / Mandor" : "Field Supervisor / Designer / Architect / Foreman",
+      image: "/user2.png",
+    },
+    {
+      name: "Neo PaneNT",
+      role: lang === "id" ? "Teknisi Jaringan CCTV" : "CCTV Network Technician",
+      image: "/man.png",
     },
   ];
 
@@ -227,89 +227,40 @@ export default function Struktur({ lang }: StrukturProps) {
               {/* Horizontal line connecting all managers */}
               <line x1="12.5%" y1="40" x2="87.5%" y2="40" stroke="#FACC15" strokeWidth="3" />
 
-              {/* Center vertical line down to Field with Arrow */}
+              {/* Drops down to techs with arrows */}
+              <line x1="16.67%" y1="40" x2="16.67%" y2="78" stroke="#FACC15" strokeWidth="3" markerEnd="url(#arrow2)" />
               <line x1="50%" y1="40" x2="50%" y2="78" stroke="#FACC15" strokeWidth="3" markerEnd="url(#arrow2)" />
+              <line x1="83.33%" y1="40" x2="83.33%" y2="78" stroke="#FACC15" strokeWidth="3" markerEnd="url(#arrow2)" />
             </svg>
           </div>
 
-          {/* Level 3: Field Operations */}
+          {/* Level 3: Technical & IT */}
           <div className="flex flex-col items-center w-full pt-4">
             <span className="text-xs text-zinc-500 font-semibold uppercase tracking-wider mb-6 bg-zinc-900 border border-white/5 px-3 py-1 rounded-full">
-              {t.levels.field}
+              {t.levels.tech}
             </span>
-            <div className="grid grid-cols-1 gap-6 max-w-sm w-full">
-              {field.map((f, idx) => {
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
+              {techs.map((tItem, idx) => {
                 return (
                   <motion.div
                     key={idx}
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.5 }}
+                    transition={{ duration: 0.5, delay: idx * 0.1 }}
                     className="w-full max-w-[280px] mx-auto rounded-xl p-5 flex flex-col items-center text-center group bg-gradient-to-br from-yellow-400 to-yellow-500 border border-yellow-300/30"
                   >
                     <div className="w-14 h-14 rounded-full overflow-hidden mb-4 border-3 border-yellow-600/40 flex-shrink-0 bg-zinc-700">
                       <Image
-                        src={f.image}
-                        alt={f.name}
+                        src={tItem.image}
+                        alt={tItem.name}
                         width={56}
                         height={56}
                         className="w-full h-full object-cover"
                       />
                     </div>
-                    <h4 className="text-base font-bold text-yellow-900 font-heading">{f.name}</h4>
-                    <p className="text-xs text-yellow-800 mt-1">{f.role}</p>
-                  </motion.div>
-                );
-              })}
-            </div>
-          </div>
-
-          {/* Connector 3: Field to Dev */}
-          <div className="hidden lg:block w-full relative" style={{ height: '40px' }}>
-            <svg
-              className="w-full h-full"
-              style={{ overflow: 'visible' }}
-              preserveAspectRatio="none"
-            >
-              <defs>
-                <marker id="arrow3" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
-                  <polygon points="0 0, 6 3, 0 6" fill="#FACC15" />
-                </marker>
-              </defs>
-
-              {/* Straight line down to Developers */}
-              <line x1="50%" y1="0" x2="50%" y2="38" stroke="#FACC15" strokeWidth="3" markerEnd="url(#arrow3)" />
-            </svg>
-          </div>
-
-          {/* Level 4: Developers */}
-          <div className="flex flex-col items-center w-full pt-4">
-            <span className="text-xs text-zinc-500 font-semibold uppercase tracking-wider mb-6 bg-zinc-900 border border-white/5 px-3 py-1 rounded-full">
-              {t.levels.dev}
-            </span>
-            <div className="grid grid-cols-1 gap-6 max-w-sm w-full">
-              {devs.map((d, idx) => {
-                return (
-                  <motion.div
-                    key={idx}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5 }}
-                    className="w-full max-w-[280px] mx-auto rounded-xl p-5 flex flex-col items-center text-center group bg-gradient-to-br from-yellow-400 to-yellow-500 border border-yellow-300/30"
-                  >
-                    <div className="w-14 h-14 rounded-full overflow-hidden mb-4 border-3 border-yellow-600/40 flex-shrink-0 bg-zinc-700">
-                      <Image
-                        src={d.image}
-                        alt={d.name}
-                        width={56}
-                        height={56}
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                    <h4 className="text-base font-bold text-yellow-900 font-heading">{d.name}</h4>
-                    <p className="text-xs text-yellow-800 mt-1">{d.role}</p>
+                    <h4 className="text-base font-bold text-yellow-900 font-heading">{tItem.name}</h4>
+                    <p className="text-xs text-yellow-800 mt-1">{tItem.role}</p>
                   </motion.div>
                 );
               })}

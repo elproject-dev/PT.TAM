@@ -21,6 +21,8 @@ export const viewport: Viewport = {
   themeColor: "#09090b",
 };
 
+import { WhatsAppButton } from "@/components/WhatsAppButton";
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html
@@ -30,6 +32,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="min-h-full flex flex-col text-foreground bg-background">
         <PwaInstallPrompt lang="id" />
         {children}
+        <WhatsAppButton />
         <Analytics />
       </body>
     </html>

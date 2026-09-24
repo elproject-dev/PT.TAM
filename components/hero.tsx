@@ -13,7 +13,7 @@ export default function Hero({ lang }: HeroProps) {
   const content = {
     id: {
       title: "Membangun Kepercayaan dengan Kualitas Terbaik",
-      subtitle: "PT. TAM menghadirkan solusi konstruksi, trading,interior serta pembuatan aplikasi & jaringan komputer yang tepat mutu, tepat biaya, dan tepat waktu.",
+      subtitle: "PT. TAM menghadirkan solusi konstruksi, trading,interior,cctv serta pembuatan aplikasi & jaringan komputer yang tepat mutu, tepat biaya, dan tepat waktu.",
       ctaPrimary: "Memulai",
     },
     en: {
@@ -115,7 +115,7 @@ export default function Hero({ lang }: HeroProps) {
         >
           <a
             href="#prakata"
-            className="flex items-center justify-center gap-2 px-6 py-2.5 text-xs sm:text-sm bg-accent-orange text-black rounded-xl font-bold shadow-lg shadow-accent-orange/10 hover:bg-accent-orange/90 transition-all hover:scale-105 active:scale-95 group"
+            className="flex items-center justify-center gap-2 px-6 py-2.5 text-xs sm:text-sm bg-accent-orange text-black rounded-full font-bold shadow-lg shadow-accent-orange/10 hover:bg-accent-orange/90 transition-all hover:scale-105 active:scale-95 group"
           >
             <span className="pl-3">{t.ctaPrimary}</span>
             <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />

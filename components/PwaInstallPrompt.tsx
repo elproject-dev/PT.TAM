@@ -56,7 +56,7 @@ export default function PwaInstallPrompt({ lang }: { lang: "id" | "en" }) {
           animate={{ opacity: 1, y: 0, scale: 1 }}
           exit={{ opacity: 0, y: 50, scale: 0.9 }}
           transition={{ type: "spring", stiffness: 300, damping: 25 }}
-          className="fixed bottom-4 left-4 right-4 sm:left-auto sm:right-4 sm:w-96 z-[9999] p-4 rounded-2xl glass-card border border-white/10 shadow-2xl flex items-center justify-between gap-4"
+          className="fixed bottom-4 left-4 right-4 sm:left-auto sm:right-4 sm:w-96 z-[9999] p-4 rounded-none glass-card border border-white/10 shadow-2xl flex items-center justify-between gap-4"
         >
           <div className="flex items-center gap-3">
             <div className="w-12 h-12 rounded-none flex items-center justify-center flex-shrink-0">
@@ -75,7 +75,7 @@ export default function PwaInstallPrompt({ lang }: { lang: "id" | "en" }) {
           <div className="flex items-center gap-2">
             <button
               onClick={handleInstallClick}
-              className="px-3 py-1.5 text-xs font-bold bg-accent-orange text-black rounded-lg hover:bg-accent-orange/90 transition-colors"
+              className="px-3 py-1.5 text-xs font-bold bg-accent-orange text-black rounded-full hover:bg-accent-orange/90 transition-colors"
             >
               Install
             </button>
